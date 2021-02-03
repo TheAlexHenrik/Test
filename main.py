@@ -1,13 +1,35 @@
 import math
-
+import numpy as np
 print("Hello")
 
 
-class Circle:
-    radius = 0
+class Shape:
+    colour = "blue"
+    filled = True
 
-    def __init__(self, radius):
+    def __init__(self, colour, filled):
+        self.colour = colour
+        self.filled = filled
+
+    def getColour(self):
+        return self.colour
+
+    def isFilled(self):
+        return self.filled
+
+    def setColour(self, colour):
+        self.colour = colour
+
+    def setFilled(self, filled):
+        self.filled = filled
+
+
+class Circle(Shape):
+    radius = 1
+
+    def __init__(self, radius, colour, filled):
         self.radius = radius
+        super().__init__(colour, filled)
 
     def getArea(self):
         return self.radius * self.radius * math.pi
@@ -22,18 +44,15 @@ class Circle:
         self.radius = radius
 
 
-circle1 = Circle(10)
+circle1 = Circle(10, "Blue", True)
+circle2 = Circle(2, "Red", False)
 print(circle1.getArea())
 print(circle1.getPeri())
-circle1.setRadius(1)
-print(circle1.getArea())
+print(circle1.getColour())
+print(circle1.isFilled())
+print(circle2.getColour())
+print(circle2.getPeri())
 
-list = ["Banan", "Apple", "Orange"]
+arr = np.array([1,2,3,4,5,6])
 
-list.append("Lort")
-
-print(list)
-
-list.remove("Banan")
-
-print(list)
+print(arr[:4])
