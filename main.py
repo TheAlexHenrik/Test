@@ -1,16 +1,39 @@
-# This is a sample Python script.
+import math
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print("Hello")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Circle:
+    radius = 0
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def __init__(self, radius):
+        self.radius = radius
+
+    def getArea(self):
+        return self.radius * self.radius * math.pi
+
+    def getPeri(self):
+        return self.radius * 2 * math.pi
+
+    def getRadius(self):
+        return self.radius
+
+    def setRadius(self, radius):
+        self.radius = radius
+
+
+circle1 = Circle(10)
+print(circle1.getArea())
+print(circle1.getPeri())
+circle1.setRadius(1)
+print(circle1.getArea())
+
+list = ["Banan", "Apple", "Orange"]
+
+list.append("Lort")
+
+print(list)
+
+list.remove("Banan")
+
+print(list)
